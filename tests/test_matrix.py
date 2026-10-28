@@ -23,3 +23,7 @@ def test_multiply_rejects_incompatible_dimensions():
 
     with pytest.raises(ValueError, match="columns.*rows"):
         multiply(a, b)
+
+def test_multiply_rejects_empty_matrix():
+    with pytest.raises(ValueError, match="non-empty"):
+        multiply([], [[1]])
