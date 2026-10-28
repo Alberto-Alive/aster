@@ -27,3 +27,12 @@ def test_multiply_rejects_incompatible_dimensions():
 def test_multiply_rejects_empty_matrix():
     with pytest.raises(ValueError, match="non-empty"):
         multiply([], [[1]])
+
+def test_multiply_rejects_ragged_matrix():
+    a = [[1, 2], [3]]
+    b = [[4], [5]]
+
+    with pytest.raises(ValueError, match="rectangular"):
+        multiply(a, b)
+
+    

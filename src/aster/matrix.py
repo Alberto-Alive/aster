@@ -4,6 +4,12 @@ def multiply(a: list[list[float]], b: list[list[float]]) -> list[list[float]]:
         raise ValueError("use non-empty matrices")
     if len(a[0]) != len(b):
         raise ValueError("columns of a must match rows of b")
+    for row in a:
+        if len(row) != len(a[0]):
+            raise ValueError("a must be a rectangular")
+    for row in b:
+        if len(row) != len(b[0]):
+            raise ValueError("b must be a rectangular")
     result = []
 
     for i in range(len(a)):
