@@ -8,3 +8,11 @@ def test_multiply_two_square_matrices():
 
     result = multiply(a, b)
     assert result == [[19, 22], [43, 50]]
+
+
+
+def test_multiply_rectangular_matrices():
+    a = [[1, 2, 3], [4, 5, 6]]
+    b = [[7, 8], [9, 10], [11, 12]]
+
+    assert multiply(a, b) == [[58, 64], [139, 154]]
