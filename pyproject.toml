@@ -1,0 +1,17 @@
+[project]
+name = "aster"
+version = "0.1.0"
+description = "A scientific computing and AI inference service"
+readme = "README.md"
+authors = [
+    { email = "alberto-alive@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+aster = "aster:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
