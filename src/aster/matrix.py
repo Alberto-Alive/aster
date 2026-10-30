@@ -1,5 +1,10 @@
 def multiply(a: list[list[float]], b: list[list[float]]) -> list[list[float]]:
     """Return the matrix product of a and b"""
+    if not isinstance(a, list) or not all(isinstance(row, list) for row in a):
+        raise ValueError("a must be a list of rows")
+    if not isinstance(b, list) or not all(isinstance(row, list) for row in b):
+        raise ValueError("b must be a list of rows")
+
     if len(a) == 0 or len(b) == 0:
         raise ValueError("use non-empty matrices")
     if len(a[0]) != len(b):
