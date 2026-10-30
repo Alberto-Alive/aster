@@ -35,4 +35,6 @@ def test_multiply_rejects_ragged_matrix():
     with pytest.raises(ValueError, match="rectangular"):
         multiply(a, b)
 
-    
+def test_multiply_rejects_empty_row():
+    with pytest.raises(ValueError, match="column"):
+        multiply([[]], [[1]])
