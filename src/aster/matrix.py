@@ -5,6 +5,15 @@ def multiply(a: list[list[float]], b: list[list[float]]) -> list[list[float]]:
     if not isinstance(b, list) or not all(isinstance(row, list) for row in b):
         raise ValueError("b must be a list of rows")
 
+    if not all(
+        isinstance(value, (int, float))
+        for matrix in (a, b)
+        for row in matrix
+        for vlaue in row
+    ):
+        raise ValueError("matrix entries must be numbers")
+
+
     if len(a) == 0 or len(b) == 0:
         raise ValueError("use non-empty matrices")
     if len(a[0]) != len(b):
